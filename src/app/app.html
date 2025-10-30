@@ -1,0 +1,63 @@
+@if (gameState === 'welcome') {
+  <div class="welcome-container">
+
+    <h1>Joc de Memoria Pau</h1>
+
+    <form (ngSubmit)="startGame()">
+
+      <div class="form-group">
+        <label for="username">Nom d'usuari:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="shuffleCount">Vegades a barrejar:</label>
+        <input type="number" id="shuffleCount" name="shuffleCount" [(ngModel)]="shuffleCount" min="1" required>
+      </div>
+
+      <button type="submit" [disabled]="!username || shuffleCount < 1">Començar Partida</button>
+
+    </form>
+  </div>
+
+} 
+
+
+@else if (gameState === 'playing') {
+
+  <div class="game-board">
+    
+    @for (card of gameCards; track $index) {
+      <div class="card"
+           [class.is-flipped]="card.state === 'flipped' || card.state === 'matched'"
+           (click)="onCardClicked(card)">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/images/back_card.png" alt="Card Back">
+          </div>
+          <div class="card-back">
+            <img [src]="card.image" alt="{{ card.id }}">
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+  
+} @else if (gameState === 'gameOver') {
+  <div class="welcome-container">
+    <h1>Felicitats, {{ username }}!</h1>
+    <p>Has guanyat la partida!</p>
+    
+    <h2>🏆 Rànquing de Victòries 🏆</h2>
+    <ol class="ranking-list">
+      @for (player of ranking; track player.username) {
+        <li>
+          <span>{{ player.username }}</span>
+          <span>{{ player.wins }} victòries</span>
+        </li>
+      }
+    </ol>
+
+    <button (click)="resetGame()">Tornar a Jugar</button>
+  </div>
+}
