@@ -1,59 +1,82 @@
-# MemoryGame
+# 🃏 Juego de Memoria con Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+[![Deploy with Vercel](https://vercel.com/button)](https://memory-game-mauve-two.vercel.app/)
 
-## Development server
+¡Bienvenido a mi proyecto de Juego de Memoria! Este no es solo un simple juego, sino una demostración completa de mis habilidades como desarrollador Frontend con un enfoque en el ecosistema de Angular y las prácticas modernas de DevOps (CI/CD).
 
-To start a local development server, run:
+## 🚀 Demo en Vivo
 
-```bash
-ng serve
-```
+**Puedes jugar la versión en vivo aquí:**
+https://memory-game-mauve-two.vercel.app
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🎯 Sobre el Proyecto
 
-```bash
-ng generate component component-name
-```
+Este proyecto fue desarrollado como parte de mi portfolio para demostrar mis competencias técnicas en **Angular** y mi comprensión del **ciclo de vida de despliegue de software**. El objetivo era construir una aplicación de página única (SPA) funcional, limpia y desplegarla siguiendo las mejores prácticas de la industria.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### ✨ Características Principales
 
-```bash
-ng generate --help
-```
+* Tablero de juego dinámico.
+* Lógica de "volteo" de cartas con animaciones CSS.
+* Sistema de emparejamiento y puntuación.
+* Botón para reiniciar la partida.
 
-## Building
+---
 
-To build the project run:
+## 🛠️ Stack Tecnológico y Herramientas
 
-```bash
-ng build
-```
+Este proyecto combina un stack de frontend moderno con un flujo de trabajo de DevOps profesional.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* **Frontend:**
+    * **Angular 20+:** Utilizado para construir una SPA robusta y modular.
+    * **TypeScript:** Para un código fuertemente tipado y mantenible.
+    * **SCSS:** Para una arquitectura de estilos CSS más limpia y escalable.
+* **DevOps (CI/CD):**
+    * **Vercel:** Plataforma de despliegue seleccionada por su integración nativa con SPAs de Angular y su CI/CD automático.
+    * **Git y GitHub:** Para el control de versiones y como disparador (trigger) del despliegue.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## ☁️ El Flujo de Despliegue (CI/CD)
 
-```bash
-ng test
-```
+Como desarrollador con mentalidad DevOps, mi objetivo no era solo "subir archivos a un servidor". He implementado un flujo de trabajo de **Integración Continua y Despliegue Continuo (CI/CD)**.
 
-## Running end-to-end tests
+1.  **Desarrollo:** Realizo cambios en el código localmente.
+2.  **Push a GitHub:** Envío mis cambios (`git push`) a la rama `main` del repositorio.
+3.  **Trigger de Vercel:** GitHub notifica a Vercel que hay un nuevo *push*.
+4.  **Build:** Vercel clona el repositorio, instala las dependencias (`npm install`) y ejecuta el *build* de producción (`ng build`).
+5.  **Despliegue:** Vercel toma la carpeta de salida (`dist/memory-game/browser`) y la despliega en su CDN global, invalidando la caché anterior.
+6.  **¡En Vivo!:** La nueva versión está disponible para los usuarios en segundos.
 
-For end-to-end (e2e) testing, run:
+Este enfoque automatizado garantiza que la demo en vivo esté siempre sincronizada con la última versión estable del código, sin intervención manual y eliminando el riesgo de error humano.
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 📦 Instalación y Uso Local
 
-## Additional Resources
+Si deseas ejecutar este proyecto en tu máquina local, sigue estos pasos:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1.  **Clona el repositorio:**
+    ```bash
+    git clone [https://github.com/](https://github.com/)[TU_USUARIO_GITHUB]/[TU_REPO].git
+    ```
+
+2.  **Navega a la carpeta del proyecto:**
+    ```bash
+    cd [NOMBRE_DE_TU_REPO]
+    ```
+
+3.  **Instala las dependencias:**
+    ```bash
+    npm install
+    ```
+
+4.  **Ejecuta el servidor de desarrollo:**
+    ```bash
+    ng serve -o
+    ```
+    La aplicación se abrirá automáticamente en `http://localhost:4200/`.
+
+---
